@@ -28,15 +28,15 @@ We have language bindings in Shell.
 {{{curl}}}
 ```
 
+{{# has_response_body? }}
 > The above command returns JSON structured like this:
 
 ```js
 {{{response_body}}}
 ```
-
+{{/ has_response_body?}}
 
 ### HTTP Request
-
 
 `{{request_method}} {{host}}{{request_path}}`
 {{/ requests}}
