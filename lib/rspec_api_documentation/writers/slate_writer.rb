@@ -1,7 +1,7 @@
 module RspecApiDocumentation
   module Writers
     class SlateWriter < GeneralMarkupWriter
-      EXTENSION = 'slate'
+      EXTENSION = 'md'
 
       def markup_index_class
         RspecApiDocumentation::Views::SlateIndex

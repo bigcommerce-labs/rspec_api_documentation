@@ -1,7 +1,7 @@
 module RspecApiDocumentation
   module Views
     class SlateExample < MarkupExample
-      EXTENSION = 'slate'
+      EXTENSION = 'md'
 
       def initialize(example, configuration)
         super
