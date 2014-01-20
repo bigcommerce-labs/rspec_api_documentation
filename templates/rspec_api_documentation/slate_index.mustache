@@ -41,6 +41,31 @@ We have language bindings in Shell.
 `{{request_method}} {{host}}{{request_path}}`
 {{/ requests}}
 
+
+{{# has_parameters? }}
+### URL Parameters
+<table class="parameters table table-striped table-bordered table-condensed">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+{{# parameters }}
+<tr>
+<td{{# required }} class="required"{{/ required }}>
+<span class="name">{{ name }}</span>
+</td>
+<td>
+<span class="description">{{ description }}</span>
+</td>
+</tr>
+{{/ parameters }}
+</tbody>
+</table>
+{{/ has_parameters? }}
+
 {{/ examples }}
 
 # Errors
