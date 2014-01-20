@@ -12,15 +12,35 @@ toc_footers:
 
 Welcome to the Bigcommerce Kitteh API.
 
-You can use our API to access Bigcommerce Kitteh API endpoints, which can get information on various cats, kittehs, and breeds in our database.
-
-We have language bindings in Shell &amp; Ruby.
+We have language bindings in Shell.
 
 
 {{# sections }}
 # {{ resource_name }}
 
 {{# examples }}
+
+## {{description}}
+
+{{#requests}}
+
+```shell
+{{{curl}}}
+```
+
+> The above command returns JSON structured like this:
+
+```js
+{{{response_body}}}
+```
+
+
+### HTTP Request
+
+
+`{{request_method}} {{host}}{{request_path}}`
+{{/ requests}}
+
 {{/ examples }}
 
 # Errors
