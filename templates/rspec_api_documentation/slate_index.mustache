@@ -1,0 +1,43 @@
+---
+title: {{ api_name }}
+
+language_tabs:
+  - shell
+
+toc_footers:
+-  <span>&copy;</span> Bigcommerce
+---
+
+# Introduction
+
+Welcome to the Bigcommerce Kitteh API.
+
+You can use our API to access Bigcommerce Kitteh API endpoints, which can get information on various cats, kittehs, and breeds in our database.
+
+We have language bindings in Shell &amp; Ruby.
+
+
+{{# sections }}
+# {{ resource_name }}
+
+{{# examples }}
+{{/ examples }}
+
+# Errors
+
+The Bigcommerce API uses the following error codes:
+
+
+Error Code | Meaning
+---------- | -------
+400 | Bad Request -- Your request is malformed
+401 | Unauthorized -- Your API key is wrong
+403 | Forbidden -- The resource requested is hidden for administrators only
+404 | Not Found -- The specified resource could not be found
+406 | Not Acceptable -- You requested a format that isn't json
+410 | Gone -- The resource requested has been removed from our servers
+500 | Internal Server Error -- We had a problem with our server. Try again later.
+503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
+
+{{/ sections }}
+
