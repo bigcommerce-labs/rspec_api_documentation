@@ -1,0 +1,89 @@
+---
+title: {{ api_name }}
+
+language_tabs:
+  - shell
+
+toc_footers:
+-  <span>&copy;</span> Bigcommerce
+---
+
+# Introduction
+
+Welcome to the Bigcommerce Kitteh API.
+
+We have language bindings in Shell.
+
+
+{{# sections }}
+# {{ resource_name }}
+
+{{# examples }}
+
+## {{description}}
+{{explanation}}
+
+{{#requests}}
+
+```shell
+{{{curl}}}
+```
+
+{{# has_response_body? }}
+> The above command returns JSON structured like this:
+
+```js
+{{{pretty_response_body}}}
+```
+{{/ has_response_body?}}
+
+### HTTP Request
+
+`{{request_method}} {{host}}{{request_path}}`
+{{/ requests}}
+
+
+{{# has_parameters? }}
+### URL Parameters
+<table class="parameters table table-striped table-bordered table-condensed">
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+{{# parameters }}
+<tr>
+<td{{# required }} class="required"{{/ required }}>
+<span class="name">{{ name }}</span>
+</td>
+<td>
+<span class="description">{{ description }}</span>
+</td>
+</tr>
+{{/ parameters }}
+</tbody>
+</table>
+{{/ has_parameters? }}
+
+{{/ examples }}
+
+# Errors
+
+The Bigcommerce API uses the following error codes:
+
+
+Error Code | Meaning
+---------- | -------
+400 | Bad Request -- Your request is malformed
+401 | Unauthorized -- Your API key is wrong
+403 | Forbidden -- The resource requested is hidden for administrators only
+404 | Not Found -- The specified resource could not be found
+406 | Not Acceptable -- You requested a format that isn't json
+410 | Gone -- The resource requested has been removed from our servers
+500 | Internal Server Error -- We had a problem with our server. Try again later.
+503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
+
+{{/ sections }}
+
