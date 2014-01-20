@@ -38,6 +38,14 @@ module RspecApiDocumentation
       respond_to?(:parameters) && parameters.present?
     end
 
+    def has_response_body?
+      if self.metadata[:requests].first[:response_body].present?
+        not self.metadata[:requests].first[:response_body].strip.blank?
+      else
+        false
+      end
+    end
+
     def explanation
       metadata[:explanation] || nil
     end
