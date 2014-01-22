@@ -1,19 +1,7 @@
 ---
-title: {{ api_name }}
-
 language_tabs:
   - shell
-
-toc_footers:
--  <span>&copy;</span> Bigcommerce
 ---
-
-# Introduction
-
-Welcome to the Bigcommerce Kitteh API.
-
-We have language bindings in Shell.
-
 
 {{# sections }}
 # {{ resource_name }}
@@ -44,12 +32,13 @@ We have language bindings in Shell.
 
 
 {{# has_parameters? }}
-### URL Parameters
+### Parameters
 <table class="parameters table table-striped table-bordered table-condensed">
 <thead>
 <tr>
 <th>Name</th>
 <th>Description</th>
+<th>Type</th>
 </tr>
 </thead>
 <tbody>
@@ -60,6 +49,9 @@ We have language bindings in Shell.
 </td>
 <td>
 <span class="description">{{ description }}</span>
+</td>
+<td>
+<span class="type">{{ extra }}</span>
 </td>
 </tr>
 {{/ parameters }}
