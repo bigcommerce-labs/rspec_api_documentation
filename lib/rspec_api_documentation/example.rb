@@ -46,6 +46,20 @@ module RspecApiDocumentation
       end
     end
 
+    def has_request_body?
+      if self.metadata[:requests].first[:request_body].present?
+        not self.metadata[:requests].first[:request_body].strip.blank?
+      else
+        false
+      end
+    end
+
+    def pretty_request_body
+      if has_request_body?
+        JSON.pretty_generate(JSON.parse(self.metadata[:requests].first[:request_body]))
+      end
+    end
+
     def pretty_response_body
       JSON.pretty_generate(JSON.parse(self.metadata[:requests].first[:response_body]))
     end
