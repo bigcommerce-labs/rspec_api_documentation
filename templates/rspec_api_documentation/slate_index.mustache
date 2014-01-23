@@ -13,12 +13,22 @@ language_tabs:
 
 {{#requests}}
 
+> cURL
+
 ```shell
 {{{curl}}}
 ```
 
+{{# has_request_body? }}
+> Sample Request
+
+```js
+{{{ pretty_request_body }}}
+```
+{{/ has_request_body? }}
+
 {{# has_response_body? }}
-> The above command returns JSON structured like this:
+> Sample Response
 
 ```js
 {{{pretty_response_body}}}
@@ -59,7 +69,10 @@ language_tabs:
 </table>
 {{/ has_parameters? }}
 
+
+
 {{/ examples }}
+{{/ sections }}
 
 # Errors
 
@@ -77,5 +90,5 @@ Error Code | Meaning
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
 
-{{/ sections }}
+
 
