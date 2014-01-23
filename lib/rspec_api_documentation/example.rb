@@ -69,6 +69,10 @@ module RspecApiDocumentation
       JSON.pretty_generate(JSON.parse(self.metadata[:requests].first[:response_body]))
     end
 
+    def endpoint
+      metadata[:example_group][:description_args].first
+    end
+
     def explanation
       metadata[:explanation] || nil
     end
