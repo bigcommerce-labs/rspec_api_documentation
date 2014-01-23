@@ -39,8 +39,13 @@ module RspecApiDocumentation
     end
 
     def has_response_body?
-      if self.metadata[:requests].first[:response_body].present?
-        not self.metadata[:requests].first[:response_body].strip.blank?
+      # TODO: Fix meeeeee
+      if self.metadata[:headers]["Content-Type"] == 'application/json'
+        if !self.metadata[:requests].empty? && self.metadata[:requests].first[:response_body].present?
+          not self.metadata[:requests].first[:response_body].strip.blank?
+        else
+          false
+        end
       else
         false
       end
