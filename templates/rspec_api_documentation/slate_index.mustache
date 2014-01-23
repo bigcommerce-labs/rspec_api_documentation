@@ -19,25 +19,9 @@ language_tabs:
 {{{curl}}}
 ```
 
-{{# has_request_body? }}
-> Sample Request
-
-```js
-{{{ pretty_request_body }}}
-```
-{{/ has_request_body? }}
-
-{{# has_response_body? }}
-> Sample Response
-
-```js
-{{{pretty_response_body}}}
-```
-{{/ has_response_body?}}
-
 ### HTTP Request
 
-`{{request_method}} {{host}}{{request_path}}`
+`{{endpoint}}`
 {{/ requests}}
 
 
@@ -69,6 +53,23 @@ language_tabs:
 </table>
 {{/ has_parameters? }}
 
+{{# has_request_body? }}
+
+### Sample Request
+
+```json
+{{{ pretty_request_body }}}
+```
+{{/ has_request_body? }}
+
+{{# has_response_body? }}
+
+### Sample Response
+
+```json
+{{{pretty_response_body}}}
+```
+{{/ has_response_body?}}
 
 
 {{/ examples }}
