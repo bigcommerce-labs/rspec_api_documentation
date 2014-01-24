@@ -19,43 +19,9 @@ language_tabs:
 {{{curl}}}
 ```
 
-### HTTP Request
-
-`{{endpoint}}`
-{{/ requests}}
-
-
-{{# has_parameters? }}
-### Parameters
-<table class="parameters table table-striped table-bordered table-condensed">
-<thead>
-<tr>
-<th>Name</th>
-<th>Description</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-{{# parameters }}
-<tr>
-<td{{# required }} class="required"{{/ required }}>
-<span class="name">{{ name }}</span>
-</td>
-<td>
-<span class="description">{{ description }}</span>
-</td>
-<td>
-<span class="type">{{ extra }}</span>
-</td>
-</tr>
-{{/ parameters }}
-</tbody>
-</table>
-{{/ has_parameters? }}
-
 {{# has_request_body? }}
 
-### Sample Request
+> Sample Request
 
 ```json
 {{{ pretty_request_body }}}
@@ -64,13 +30,45 @@ language_tabs:
 
 {{# has_response_body? }}
 
-### Sample Response
+> Sample Response
 
 ```json
 {{{pretty_response_body}}}
 ```
 {{/ has_response_body?}}
 
+### HTTP Request
+
+`{{endpoint}}`
+{{/ requests}}
+
+{{# has_parameters? }}
+### Parameters
+<table>
+  <thead>
+    <tr>
+      <th class="heading-name">Name</th>
+      <th class="heading-type">Type</th>
+      <th class="heading-notes">Implementation notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{# parameters }}
+    <tr>
+      <td>
+        <span class="name">{{# required }}<!--span class="required">*</span-->{{/ required }}{{ name }}</span>
+      </td>
+      <td>
+        <span class="type">{{ extra }}</span>
+      </td>
+      <td>
+        <span class="description">{{ description }}</span>
+      </td>
+    </tr>
+    {{/ parameters }}
+  </tbody>
+</table>
+{{/ has_parameters? }}
 
 {{/ examples }}
 {{/ sections }}
