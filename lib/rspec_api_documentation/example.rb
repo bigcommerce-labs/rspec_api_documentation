@@ -69,6 +69,34 @@ module RspecApiDocumentation
       JSON.pretty_generate(JSON.parse(self.metadata[:requests].first[:response_body]))
     end
 
+    def nested_hash_value(obj,key)
+      if obj.respond_to?(:key?) && obj.key?(key)
+        obj[key]
+      elsif obj.respond_to?(:each)
+        r = nil
+        obj.find{ |*a| r=nested_hash_value(a.last,key) }
+        r
+      end
+    end
+
+    def has_response_params?
+      has_response_params = nested_hash_value(metadata[:parameters], :in_response)
+      if has_response_params
+        true
+      else
+        false
+      end
+    end
+
+    def has_request_params?
+      has_request_params = nested_hash_value(metadata[:parameters], :in_request)
+      if has_request_params
+        true
+      else
+        false
+      end
+    end
+
     def endpoint
       metadata[:example_group][:description_args].first
     end

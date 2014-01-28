@@ -42,8 +42,8 @@ language_tabs:
 `{{endpoint}}`
 {{/ requests}}
 
-{{# has_parameters? }}
-### Parameters
+{{# has_request_params? }}
+### Request Parameters
 <table>
   <thead>
     <tr>
@@ -54,21 +54,55 @@ language_tabs:
   </thead>
   <tbody>
     {{# parameters }}
-    <tr>
-      <td>
-        <span class="name">{{# required }}<!--span class="required">*</span-->{{/ required }}{{ name }}</span>
-      </td>
-      <td>
-        <span class="type">{{ extra }}</span>
-      </td>
-      <td>
-        <span class="description">{{ description }}</span>
-      </td>
-    </tr>
+      {{# in_request }}
+        <tr>
+          <td>
+            <span class="name">{{# required }}<!--span class="required">*</span-->{{/ required }}{{ name }}</span>
+          </td>
+          <td>
+            <span class="type">{{ type }}</span>
+          </td>
+          <td>
+            <span class="description">{{ description }}</span>
+          </td>
+        </tr>
+      {{/ in_request }}
     {{/ parameters }}
   </tbody>
 </table>
-{{/ has_parameters? }}
+
+{{/ has_request_params? }}
+
+{{# has_response_params? }}
+### Response Parameters
+
+<table>
+  <thead>
+    <tr>
+      <th class="heading-name">Name</th>
+      <th class="heading-type">Type</th>
+      <th class="heading-notes">Implementation notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{# parameters }}
+      {{# in_response }}
+        <tr>
+          <td>
+            <span class="name">{{# required }}<!--span class="required">*</span-->{{/ required }}{{ name }}</span>
+          </td>
+          <td>
+            <span class="type">{{ type }}</span>
+          </td>
+          <td>
+            <span class="description">{{ description }}</span>
+          </td>
+        </tr>
+      {{/ in_response }}
+    {{/ parameters }}
+  </tbody>
+</table>
+{{/ has_response_params? }}
 
 {{/ examples }}
 {{/ sections }}
